@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useTheme } from "./theme";
+import { useTheme } from "../theme";
 
 const StyledButton = styled.button`
   color: white;

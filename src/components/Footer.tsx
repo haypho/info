@@ -3,7 +3,7 @@ import { faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-import Button from "./Button";
+import { Button } from "./button";
 import { useTheme } from "./theme";
 
 const Container = styled.footer`
