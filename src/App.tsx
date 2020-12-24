@@ -7,6 +7,12 @@ import Projects from "./pages/Projects";
 import { useDispatch, useSelector } from "react-redux";
 import { themeSelector } from "./store/selectors/theme.selectors";
 import { toggleDarkMode } from "./store/slices/theme.slice";
+import Styled from "styled-components";
+
+const Container = Styled.div`
+  color: ${(props) => props.theme.colors.text};
+  background: ${(props) => props.theme.colors.background};
+`;
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -15,11 +21,13 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <HashRouter basename="/">
-        <NavBar onChangeTheme={onChangeTheme} />
-        <Route exact path="/" component={Home} />
-        <Route path="/projects" component={Projects} />
-      </HashRouter>
+      <Container theme={theme}>
+        <HashRouter basename="/">
+          <NavBar onChangeTheme={onChangeTheme} />
+          <Route exact path="/" component={Home} />
+          <Route path="/projects" component={Projects} />
+        </HashRouter>
+      </Container>
     </ThemeProvider>
   );
 };

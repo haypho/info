@@ -13,7 +13,7 @@ import Switch from "../switch";
 
 const StyledNav = Styled.nav`
   display: flex;
-  box-shadow: 0 0 3px black;
+  box-shadow: 0 0 3px ${(props) => props.theme.colors.foreground};
   padding: 0 5%;
   background-color: ${(props) => props.theme.colors.background};
 
