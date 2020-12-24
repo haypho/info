@@ -1,7 +1,9 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
+import Button from "./Button";
 import { useTheme } from "./theme";
 
 const Container = styled.footer`
@@ -24,8 +26,14 @@ const Content = styled.div`
 const Column = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 const Copyright = styled.em`
@@ -39,6 +47,10 @@ const Link = styled.a`
   padding: 0.5vh 1vw;
 `;
 
+const Text = styled.span`
+  margin: 0 0.3vw;
+`;
+
 const Footer: React.FC = () => {
   const theme = useTheme();
 
@@ -46,24 +58,61 @@ const Footer: React.FC = () => {
     <Container theme={theme}>
       <Wrapper>
         <Content>
-          <Column>Footer</Column>
+          <Column>
+            <Row>
+              <FontAwesomeIcon
+                icon={faMapMarkerAlt}
+                size="lg"
+                color={theme.colors.text}
+              />
+              <Text>United Stated</Text>
+            </Row>
+            <Row>
+              <Link theme={theme} href="mailto:hphothong@gmail.com">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  size="lg"
+                  color={theme.colors.text}
+                />
+                <Text>hphothong@gmail.com</Text>
+              </Link>
+            </Row>
+          </Column>
+          <Column>
+            <Row>
+              <Link
+                theme={theme}
+                href="https://www.github.com/hphothong"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  size="lg"
+                  color={theme.colors.text}
+                />
+              </Link>
+              <Link
+                theme={theme}
+                href="https://www.linkedin.com/in/hayden-phothong-a2393312"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  size="lg"
+                  color={theme.colors.text}
+                />
+              </Link>
+            </Row>
+          </Column>
           <Column>
             <Link
               theme={theme}
-              href="https://www.github.com/hphothong"
+              href={`${process.env.PUBLIC_URL}/Resume_Hayden_Phothong.pdf`}
               target="_blank"
             >
-              <FontAwesomeIcon icon={faGithub} size="lg" />
-            </Link>
-            <Link
-              theme={theme}
-              href="https://www.linkedin.com/in/hayden-phothong-a2393312"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faLinkedin} size="lg" />
+              <Button>View Résumé</Button>
             </Link>
           </Column>
-          <Column>Footer</Column>
         </Content>
         <Copyright>Hayden Phothong &copy; 2020</Copyright>
       </Wrapper>
