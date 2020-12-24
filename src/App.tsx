@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  margin: 0 7%;
+  margin: 0 20%;
 `;
 
 const App: React.FC = () => {
