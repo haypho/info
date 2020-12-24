@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { themeSelector } from "./store/selectors/theme.selectors";
 import { toggleDarkMode } from "./store/slices/theme.slice";
 import Styled from "styled-components";
+import CodingChallenges from "./pages/CodingChallenges";
 
 const Container = Styled.div`
   color: ${(props) => props.theme.colors.text};
@@ -26,6 +27,7 @@ const App: React.FC = () => {
           <NavBar onChangeTheme={onChangeTheme} />
           <Route exact path="/" component={Home} />
           <Route path="/projects" component={Projects} />
+          <Route path="/coding-challenges" component={CodingChallenges} />
         </HashRouter>
       </Container>
     </ThemeProvider>

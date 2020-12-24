@@ -1,6 +1,6 @@
 import React, { ReactNode, useCallback, useState } from "react";
 import Styled from "styled-components";
-import { useTheme } from "../theme";
+import { useTheme } from "./theme";
 
 const Container = Styled.div`
   display: flex;

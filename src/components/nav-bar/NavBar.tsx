@@ -6,10 +6,11 @@ import {
   faCode,
   faHome,
   faMoon,
+  faProjectDiagram,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "../theme";
-import Switch from "../switch";
+import Switch from "../Switch";
 
 const StyledNav = Styled.nav`
   display: flex;
@@ -67,8 +68,11 @@ const NavBar: React.FC<NavBarProps> = ({ onChangeTheme }: NavBarProps) => {
         <NavItem to="/" icon={faHome}>
           Home
         </NavItem>
-        <NavItem to="projects" icon={faCode}>
+        <NavItem to="projects" icon={faProjectDiagram}>
           Projects
+        </NavItem>
+        <NavItem to="coding-challenges" icon={faCode}>
+          Coding Challenges
         </NavItem>
       </MenuArea>
       <Switch
