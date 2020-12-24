@@ -7,12 +7,15 @@ import Projects from "./pages/Projects";
 import { useDispatch, useSelector } from "react-redux";
 import { themeSelector } from "./store/selectors/theme.selectors";
 import { toggleDarkMode } from "./store/slices/theme.slice";
-import Styled from "styled-components";
+import styled from "styled-components";
 import CodingChallenges from "./pages/CodingChallenges";
+import Footer from "./components/Footer";
+import GlobalStyle from "./styles/global-styles";
 
-const Container = Styled.div`
-  color: ${(props) => props.theme.colors.text};
-  background: ${(props) => props.theme.colors.background};
+const Content = styled.div`
+  position: relative;
+  min-height: 100%;
+  margin: 0 7%;
 `;
 
 const App: React.FC = () => {
@@ -22,14 +25,16 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container theme={theme}>
-        <HashRouter basename="/">
-          <NavBar onChangeTheme={onChangeTheme} />
+      <GlobalStyle theme={theme} />
+      <HashRouter basename="/">
+        <NavBar onChangeTheme={onChangeTheme} />
+        <Content>
           <Route exact path="/" component={Home} />
           <Route path="/projects" component={Projects} />
           <Route path="/coding-challenges" component={CodingChallenges} />
-        </HashRouter>
-      </Container>
+        </Content>
+      </HashRouter>
+      <Footer />
     </ThemeProvider>
   );
 };
