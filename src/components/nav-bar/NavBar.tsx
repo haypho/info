@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
 import NavItem from "./NavItem";
-import { faBars, faCode, faHome } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faCode,
+  faHome,
+  faMoon,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from "../theme";
+import Switch from "../switch";
 
 const StyledNav = Styled.nav`
   display: flex;
   box-shadow: 0 0 3px black;
   padding: 0 5%;
+  background-color: ${(props) => props.theme.colors.background};
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
@@ -38,11 +46,16 @@ const MenuArea = Styled.div`
   }
 `;
 
-const NavBar: React.FC = () => {
+export interface NavBarProps {
+  onChangeTheme?(): void;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ onChangeTheme }: NavBarProps) => {
+  const theme = useTheme();
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   return (
-    <StyledNav>
+    <StyledNav theme={theme}>
       <TitleArea>
         <NavItem to="/">Hayden Phothong</NavItem>
         <MenuButton
@@ -58,6 +71,10 @@ const NavBar: React.FC = () => {
           Projects
         </NavItem>
       </MenuArea>
+      <Switch
+        left={<FontAwesomeIcon icon={faMoon} />}
+        onChange={onChangeTheme}
+      />
     </StyledNav>
   );
 };

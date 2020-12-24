@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, LinkProps } from "react-router-dom";
 import Styled from "styled-components";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { useTheme } from "../theme";
 
 const StyledLink = Styled(Link)`
   padding: 15px 10px;
   font-weight: bold;
   text-decoration: none;
-  color: black;
+  color: ${(props) => props.theme.colors.text};
   opacity: 1;
 
   @media screen and (min-width: 600px) {
@@ -32,8 +33,10 @@ const NavItem: React.FC<NavItemProps> = ({
   children,
   ...props
 }: NavItemProps) => {
+  const theme = useTheme();
+
   return (
-    <StyledLink {...props}>
+    <StyledLink {...props} theme={theme}>
       {icon !== undefined && <StyledIcon icon={icon} />}
       {children}
     </StyledLink>
