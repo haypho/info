@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useTheme } from "./theme";
 
 const StyledButton = styled.button`
-  color: ${(props) => props.theme.colors.background};
+  color: white;
   background-color: ${(props) => props.theme.colors.primary};
 
   border: none;

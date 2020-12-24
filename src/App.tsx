@@ -26,22 +26,20 @@ const App: React.FC = () => {
   const onChangeTheme = useCallback(() => dispatch(toggleDarkMode()), []);
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Container>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle theme={theme} />
-          <HashRouter basename="/">
-            <NavBar onChangeTheme={onChangeTheme} />
-            <Content>
-              <Route exact path="/" component={Home} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/coding-challenges" component={CodingChallenges} />
-            </Content>
-          </HashRouter>
-        </ThemeProvider>
+        <GlobalStyle theme={theme} />
+        <HashRouter basename="/">
+          <NavBar onChangeTheme={onChangeTheme} />
+          <Content>
+            <Route exact path="/" component={Home} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/coding-challenges" component={CodingChallenges} />
+          </Content>
+        </HashRouter>
       </Container>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 };
 
