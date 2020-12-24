@@ -12,9 +12,11 @@ import CodingChallenges from "./pages/CodingChallenges";
 import Footer from "./components/Footer";
 import GlobalStyle from "./styles/global-styles";
 
+const Container = styled.div`
+  flex-grow: 1;
+`;
+
 const Content = styled.div`
-  position: relative;
-  min-height: 100%;
   margin: 0 7%;
 `;
 
@@ -24,18 +26,22 @@ const App: React.FC = () => {
   const onChangeTheme = useCallback(() => dispatch(toggleDarkMode()), []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle theme={theme} />
-      <HashRouter basename="/">
-        <NavBar onChangeTheme={onChangeTheme} />
-        <Content>
-          <Route exact path="/" component={Home} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/coding-challenges" component={CodingChallenges} />
-        </Content>
-      </HashRouter>
+    <>
+      <Container>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle theme={theme} />
+          <HashRouter basename="/">
+            <NavBar onChangeTheme={onChangeTheme} />
+            <Content>
+              <Route exact path="/" component={Home} />
+              <Route path="/projects" component={Projects} />
+              <Route path="/coding-challenges" component={CodingChallenges} />
+            </Content>
+          </HashRouter>
+        </ThemeProvider>
+      </Container>
       <Footer />
-    </ThemeProvider>
+    </>
   );
 };
 

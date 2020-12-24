@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { useTheme } from "./theme";
 
-const Container = styled.div`
-  position: absolute;
-  bottom: 0;
+const Container = styled.footer`
   width: 100%;
   background-color: ${(props) => props.theme.colors.background};
-  box-shadow: 0 0 3px ${(props) => props.theme.colors.foreground};
+  box-shadow: 0 0 3px black;
+  flex-shrink: 0;
 `;
 
 const Content = styled.div`

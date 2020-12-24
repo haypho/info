@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     color: ${(props) => props.theme.colors.text};
     background-color: ${(props) => props.theme.colors.background};
+    height: 100%;
   }
 
   body {
@@ -13,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
   }
 
   code {
@@ -21,7 +23,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 `;
 

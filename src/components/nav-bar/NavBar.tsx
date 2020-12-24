@@ -14,9 +14,12 @@ import Switch from "../Switch";
 
 const StyledNav = Styled.nav`
   display: flex;
-  box-shadow: 0 0 3px ${(props) => props.theme.colors.foreground};
+  box-shadow: 0 0 3px black;
   padding: 0 5%;
   background-color: ${(props) => props.theme.colors.background};
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
