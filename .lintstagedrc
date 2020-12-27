@@ -1,6 +1,6 @@
 {
   "*.js[x]": [
     "eslint --cache --fix",
-    "yarn test",
+    "jest --bail --findRelatedTests"
   ]
 }
