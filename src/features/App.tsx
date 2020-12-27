@@ -5,7 +5,7 @@ import Navigation from './navigation/Navigation';
 import Welcome from './welcome/Welcome';
 import Projects from './projects/Projects';
 
-const App = () => (
+const App: React.FC = () => (
   <HashRouter basename="/">
     <Navigation />
     <Route exact path="/" component={Welcome} />

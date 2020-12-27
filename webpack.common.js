@@ -3,6 +3,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -36,6 +37,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: path.join(__dirname, 'public/index.html'),
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      async: false,
+      eslint: {
+        files: './src/**/*.{ts,tsx,js,jsx}',
+      },
     }),
   ],
 };
