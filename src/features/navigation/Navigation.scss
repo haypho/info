@@ -1,0 +1,10 @@
+.navigation {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+
+  background-color: grey;
+  height: 5vh;
+  position: sticky;
+}
