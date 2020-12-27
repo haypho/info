@@ -2,8 +2,18 @@
 
 exports[`when rendering the App should match the snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    Hello from main App. This is an addition.
-  </div>
+  <a
+    href="#/"
+  >
+    Home
+  </a>
+  <a
+    href="#/projects"
+  >
+    Projects
+  </a>
+  <h1>
+    Welcome!
+  </h1>
 </DocumentFragment>
 `;

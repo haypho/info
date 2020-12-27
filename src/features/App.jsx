@@ -1,6 +1,16 @@
 import './App.scss';
 import React from 'react';
+import { HashRouter, Route } from 'react-router-dom';
+import Navigation from './navigation/Navigation';
+import Welcome from './welcome/Welcome';
+import Projects from './projects/Projects';
 
-const App = () => <div>Hello from main App. This is an addition.</div>;
+const App = () => (
+  <HashRouter basename="/">
+    <Navigation />
+    <Route exact path="/" component={Welcome} />
+    <Route path="/projects" component={Projects} />
+  </HashRouter>
+);
 
 export default App;
