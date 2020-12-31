@@ -6,16 +6,24 @@ import Welcome from './welcome/Welcome';
 import Projects from './projects/Projects';
 
 const App: React.FC = () => (
-  <>
-    <div className="container">
-      <HashRouter basename="/">
+  <HashRouter basename="/">
+    <header className="app-header">
+      <div className="container flex flex-col">
+        <div className="app-title-area">
+          <h2 className="app-title">Hayden Phothong</h2>
+          <p className="app-subtitle">PERSONAL PORTFOLIO</p>
+        </div>
         <Navigation />
-        <Route exact path="/" component={Welcome} />
-        <Route path="/projects" component={Projects} />
-      </HashRouter>
+      </div>
+    </header>
+    <div className="app-content container">
+      <Route exact path="/" component={Welcome} />
+      <Route path="/projects" component={Projects} />
     </div>
-    <em className="footer">Hayden Phothong &copy; 2020</em>
-  </>
+    <footer className="app-footer">
+      <p>Hayden Phothong &copy; 2020</p>
+    </footer>
+  </HashRouter>
 );
 
 export default App;

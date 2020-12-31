@@ -1,10 +1,30 @@
-.container {
-  flex: 1;
+@use '../styles/colors';
+@use '../styles/sizes';
+
+.app-header {
+  background: colors.$background;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  padding: 10px 10px;
-  background-color: #e0e0e0;
+.app-header .container {
+  text-align: center;
+  padding: 1em 0;
+  justify-content: space-between;
+}
+
+.app-title {
+  margin-bottom: 0;
+}
+
+.app-subtitle {
+  font-size: 0.75rem;
+}
+
+.app-content {
+  flex-grow: 1;
+}
+
+@media (min-width: sizes.$breakpoint) {
+  .app-header .container {
+    flex-direction: row;
+  }
 }
