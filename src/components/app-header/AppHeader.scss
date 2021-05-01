@@ -1,0 +1,18 @@
+@import "../../styles/theme";
+
+.app-header {
+  background: $primary;
+  margin-bottom: 0.5em;
+  box-shadow: 0 1px 2px $secondary;
+}
+
+.app-title {
+  color: $background;
+  margin-bottom: 0.25em;
+  font-size: 1.5rem;
+}
+
+.app-subtitle {
+  color: $background;
+  font-size: 1.25rem;
+}
