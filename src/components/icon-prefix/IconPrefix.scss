@@ -1,0 +1,11 @@
+@import "../../styles/theme";
+
+.icon-prefix {
+  display: flex;
+  align-items: center;
+}
+
+.icon-prefix-icon {
+  margin-right: 0.25em;
+  color: $secondary;
+}
