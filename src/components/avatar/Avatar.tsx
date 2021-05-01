@@ -6,12 +6,13 @@ export interface AvatarProps {
   alt: string;
   title?: string;
   subtitle?: string;
+  className?: string;
 }
 
 const Avatar: FC<AvatarProps> = ({
-  src, alt, title, subtitle,
+  src, alt, title, subtitle, className,
 }: AvatarProps) => (
-  <div className="avatar">
+  <div className={['avatar', className].join(' ')}>
     <img className="avatar-img" src={src} alt={alt} />
     {title || subtitle ? (
       <div className="avatar-details">

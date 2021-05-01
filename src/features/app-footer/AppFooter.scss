@@ -1,3 +1,11 @@
+@import "../../styles/theme";
+
+.app-footer {
+  color: $background;
+  background: $secondary;
+  padding: 1em 0;
+}
+
 .app-footer-content {
   display: flex;
   flex-direction: column;
@@ -5,10 +13,16 @@
 }
 
 .app-footer-content-sections {
-  display: flex;
-  flex-direction: column-reverse;
+  margin-bottom: 1em;
 }
 
 .app-footer-copyright {
   font-size: 0.75rem;
+}
+
+@media (min-width: 730px) {
+  .app-footer-content-sections {
+    display: flex;
+    flex-direction: row;
+  }
 }

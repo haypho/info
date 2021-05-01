@@ -1,3 +1,38 @@
-.my-links-anchor {
+@import "../../styles/theme";
+
+.my-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-link {
   margin-bottom: 0.5em;
+}
+
+.my-link-anchor {
+  color: $background;
+
+  &:hover, &:focus {
+    color: darken($background, 25%);
+  }
+  
+  &:active {
+    color: darken($background, 50%);
+  }
+}
+
+@media (min-width: 600px) {
+  .my-links {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 730px) {
+  .my-links {
+    flex-direction: column;
+    justify-content: inherit;
+    align-items: flex-start;
+  }
 }

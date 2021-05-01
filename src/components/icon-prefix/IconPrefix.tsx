@@ -5,12 +5,13 @@ import React, { FC, ReactNode } from 'react';
 
 export interface IconPrefixProps {
   children?: ReactNode;
-  icon: IconProp;
+  color?: string;
+  icon: IconProp
 }
 
-const IconPrefix: FC<IconPrefixProps> = ({ children, icon }: IconPrefixProps) => (
+const IconPrefix: FC<IconPrefixProps> = ({ children, icon, color = '#5e5e5e' }: IconPrefixProps) => (
   <div className="icon-prefix">
-    <FontAwesomeIcon className="icon-prefix-icon" icon={icon} />
+    <FontAwesomeIcon className="icon-prefix-icon" icon={icon} color={color} />
     <div className="icon-prefix-content">
       {children}
     </div>

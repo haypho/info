@@ -1,14 +1,14 @@
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import './AboutMe.scss';
 import React, { FC } from 'react';
 import Avatar from '../../components/avatar';
-import IconPrefix from '../../components/icon-prefix/IconPrefix';
 
 const AboutMe: FC = () => (
   <div className="about-me">
     <Avatar src="/assets/images/profile.jpg" alt="profile" title="Hayden Phothong" subtitle="Software Engineer" />
-    <IconPrefix icon={faEnvelope}>
-      <a className="about-me-email" href="mailto:hphothong@gmail.com">hphothong@gmail.com</a>
-    </IconPrefix>
+    <p className="about-me-message">
+      Hello! I am a full-stack web engineer by trade. However,
+      I am still relatively new to the industry, so I am looking for my niche!
+    </p>
   </div>
 );
 

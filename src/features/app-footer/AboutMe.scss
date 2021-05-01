@@ -1,0 +1,16 @@
+.about-me {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-me-message {
+  margin: 1em 2em;
+  vertical-align: bottom;
+}
+
+@media (min-width: 600px) {
+  .about-me {
+    flex-direction: row;
+    align-items: center;
+  }
+}
