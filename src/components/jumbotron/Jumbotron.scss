@@ -1,0 +1,42 @@
+@import "../../styles/theme";
+
+.jumbotron {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: flex;
+  flex: 0.5;
+  align-items: center;
+}
+
+.jumbotron-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+  .jumbotron-title {
+    color: $background;
+    margin: 0 1rem 0 0;
+    font-size: 1.25rem;
+  }
+
+  .jumbotron-subtitle {
+    color: $background;
+    margin: 0 1rem 0 0;
+  }
+}
+
+
+
+@media (min-width: 600px) {
+  .jumbotron-container {
+    .jumbotron-title {
+      font-size: 2.5rem;
+    }
+
+    .jumbotron-subtitle {
+      font-size: 1.5rem;
+    }
+  }
+}
