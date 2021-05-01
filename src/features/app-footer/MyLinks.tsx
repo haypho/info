@@ -5,12 +5,16 @@ import IconPrefix from '../../components/icon-prefix';
 
 const MyLinks: FC = () => (
   <div className="my-links">
-    <a className="my-links-anchor" href="https://www.github.com/hphothong" target="_blank" rel="noreferrer">
-      <IconPrefix icon={faGithub}>GitHub</IconPrefix>
-    </a>
-    <a className="my-links-anchor" href="https://www.linkedin.com/in/hayden-phothong-a2393312" target="_blank" rel="noreferrer">
-      <IconPrefix icon={faLinkedinIn}>LinkedIn</IconPrefix>
-    </a>
+    <div className="my-links-anchor">
+      <a href="https://www.github.com/hphothong" target="_blank" rel="noreferrer">
+        <IconPrefix icon={faGithub}>GitHub</IconPrefix>
+      </a>
+    </div>
+    <div className="my-links-anchor">
+      <a href="https://www.linkedin.com/in/hayden-phothong-a2393312" target="_blank" rel="noreferrer">
+        <IconPrefix icon={faLinkedinIn}>LinkedIn</IconPrefix>
+      </a>
+    </div>
   </div>
 );
 
