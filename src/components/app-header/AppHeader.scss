@@ -6,6 +6,10 @@
   box-shadow: 0 1px 2px $secondary;
 }
 
+.app-title-area {
+  min-height: 50px;
+}
+
 .app-title {
   color: $background;
   margin-bottom: 0.25em;
@@ -15,4 +19,16 @@
 .app-subtitle {
   color: $background;
   font-size: 1.25rem;
+}
+
+@media (min-width: 475px) {
+  .app-title-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .app-subtitle {
+      margin: 0;
+    }
+  }
 }
