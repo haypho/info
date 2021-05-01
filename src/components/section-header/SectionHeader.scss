@@ -1,0 +1,13 @@
+@import "../../styles/theme";
+
+.section-header {
+  border-bottom: 3px solid $primary;
+  margin-bottom: 0.5em;
+
+  .section-header-title {
+    color: $primary;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+}
