@@ -4,13 +4,16 @@ import AppFooter from './app-footer/AppFooter';
 import AppHeader from '../components/app-header';
 import Jumbotron from '../components/jumbotron';
 import WelcomeMessage from './WelcomeMessage';
+import AppContentSection from '../components/app-content-section';
 
 const App: React.FC = () => (
   <>
     <AppHeader title="Hayden Phothong" />
     <Jumbotron title="Personal Portfolio" />
     <div className="app-content">
-      <WelcomeMessage />
+      <AppContentSection>
+        <WelcomeMessage />
+      </AppContentSection>
     </div>
     <AppFooter />
   </>
