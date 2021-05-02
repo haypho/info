@@ -5,6 +5,7 @@ import AppHeader from '../components/app-header';
 import Jumbotron from '../components/jumbotron';
 import WelcomeMessage from './WelcomeMessage';
 import AppContentSection from '../components/app-content-section';
+import Projects from './projects';
 
 const App: React.FC = () => (
   <>
@@ -13,6 +14,9 @@ const App: React.FC = () => (
     <div className="app-content">
       <AppContentSection>
         <WelcomeMessage />
+      </AppContentSection>
+      <AppContentSection>
+        <Projects />
       </AppContentSection>
     </div>
     <AppFooter />

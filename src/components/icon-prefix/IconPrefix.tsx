@@ -7,11 +7,15 @@ export interface IconPrefixProps {
   children?: ReactNode;
   color?: string;
   icon: IconProp
+  onClickIcon?(): void;
+  className?: string;
 }
 
-const IconPrefix: FC<IconPrefixProps> = ({ children, icon, color = '#5e5e5e' }: IconPrefixProps) => (
-  <div className="icon-prefix">
-    <FontAwesomeIcon className="icon-prefix-icon" icon={icon} color={color} />
+const IconPrefix: FC<IconPrefixProps> = ({
+  children, icon, onClickIcon, color = '#5e5e5e', className,
+}: IconPrefixProps) => (
+  <div className={['icon-prefix', className].join(' ')}>
+    <FontAwesomeIcon className="icon-prefix-icon" icon={icon} color={color} onClick={onClickIcon} />
     <div className="icon-prefix-content">
       {children}
     </div>
