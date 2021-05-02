@@ -16,23 +16,19 @@ const ImageographyCard: FC = () => {
 
   const FrontContent = useCallback(() => (
     <div>
-      <p>A mobile application built on the React-Native framework.</p>
+      <p>{Imageography.description}</p>
       <strong>Tech Stack:</strong>
-      <p>React Native, Redux, TypeScript, Firebase (e.g., Auth, Firestore)</p>
-      <div>
-        <p>
-          You can find the app on
-          {' '}
-          <a href={Imageography.ios.url} target="_blank" rel="noreferrer">iOS</a>
-          {' '}
-          and
-          {' '}
-          <a href={Imageography.android.url} target="_blank" rel="noreferrer">Android</a>
-          .
-          {' '}
-          <em>QR code is also available.</em>
-        </p>
-      </div>
+      <p>{Imageography.techStack}</p>
+      <p>
+        You can find the app on the
+        {' '}
+        <a href={Imageography.ios.url} target="_blank" rel="noreferrer">App Store</a>
+        {' '}
+        and the
+        {' '}
+        <a href={Imageography.android.url} target="_blank" rel="noreferrer">Play Store</a>
+        .
+      </p>
     </div>
   ), []);
 

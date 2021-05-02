@@ -1,14 +1,36 @@
-import React, { FC } from 'react';
+import { faNpm } from '@fortawesome/free-brands-svg-icons';
+import React, { FC, useCallback } from 'react';
 import Card from '../../../components/card';
 import PlatformLabel from '../../../components/platform-label';
+import { ReactNativeWebCache } from '../../../constants';
 
-const ReactNativeWebCacheCard: FC = () => (
-  <Card
-    className="project-card"
-    title="React-Native Web Cache"
-    renderFrontContent={<div>hello</div>}
-    renderFrontFooter={<PlatformLabel ios android />}
-  />
-);
+const ReactNativeWebCacheCard: FC = () => {
+  const FrontContent = useCallback(() => (
+    <div>
+      <p>{ReactNativeWebCache.description}</p>
+      <strong>Tech Stack:</strong>
+      <p>{ReactNativeWebCache.techStack}</p>
+      <p>
+        You can find this package on
+        {' '}
+        <a href={ReactNativeWebCache.npm.url} target="_blank" rel="noreferrer">NPM</a>
+        {' '}
+        and
+        {' '}
+        <a href={ReactNativeWebCache.yarn.url} target="_blank" rel="noreferrer">Yarn</a>
+        .
+      </p>
+    </div>
+  ), []);
+
+  return (
+    <Card
+      className="project-card"
+      title="React-Native Web Cache"
+      renderFrontContent={<FrontContent />}
+      renderFrontFooter={<PlatformLabel custom={faNpm} />}
+    />
+  );
+};
 
 export default ReactNativeWebCacheCard;
