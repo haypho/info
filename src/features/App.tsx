@@ -8,6 +8,7 @@ import WelcomeMessage from './WelcomeMessage';
 import AppContentSection from '../components/app-content-section';
 import Projects from './projects';
 import fetchGithubUserByUsername from '../store/thunks/github-user/fetchGithubUserByUsername.thunk';
+import CodingChallenges from './coding-challenges';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ const App: React.FC = () => {
         </AppContentSection>
         <AppContentSection>
           <Projects />
+        </AppContentSection>
+        <AppContentSection>
+          <CodingChallenges />
         </AppContentSection>
       </div>
       <AppFooter />
