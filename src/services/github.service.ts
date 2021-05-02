@@ -13,6 +13,23 @@ export default class GithubService {
       return axios.get(url);
     }
 
+  public static fetchAvailableDailyCodingProblems =
+    async (): Promise<number[]> => {
+      const path = 'src/daily-coding-problem';
+      const url = `${GithubService.BaseURL}/repos/${GithubService.GithubUsername}/coding-challenges/contents/${path}`;
+
+      const toProblemNumbers = (problems: number[], content: GithubRepoContent) => {
+        if (content.name) {
+          problems.push(Number(content.name[content.name.length - 1]));
+        }
+        return problems;
+      };
+
+      return axios.get<GithubRepoContent[]>(url)
+        .then((res) => res.data.reduce(toProblemNumbers, []))
+        .catch(() => []);
+    }
+
   public static fetchDailyCodingProblem =
     async (problemNumber: number): Promise<AxiosResponse<GithubRepoContent[]>> => {
       const path = `src/daily-coding-problem/problem-${problemNumber}`;
