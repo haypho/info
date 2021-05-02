@@ -4,7 +4,9 @@ import { faFilePdf, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import IconPrefix from '../../components/icon-prefix';
 import { MyLink } from '../../models';
-import { personalEmail } from '../../constants';
+import {
+  personalEmail, personalEmailURL, personalGithubURL, personalLinkedInURL,
+} from '../../constants';
 import Resume from '../../assets/pdf/Résumé_Hayden_Phothong.pdf';
 
 const MyLinks: FC = () => {
@@ -15,17 +17,17 @@ const MyLinks: FC = () => {
       text: 'Résumé',
     },
     {
-      href: 'https://www.github.com/hphothong',
+      href: personalGithubURL,
       icon: faGithub,
       text: 'GitHub',
     },
     {
-      href: 'https://www.linkedin.com/in/hayden-phothong-a2393312',
+      href: personalLinkedInURL,
       icon: faLinkedinIn,
       text: 'LinkedIn',
     },
     {
-      href: `mailto:${personalEmail}`,
+      href: personalEmailURL,
       icon: faEnvelope,
       text: personalEmail,
     },
