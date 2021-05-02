@@ -1,3 +1,4 @@
+import './CodingChallenges.scss';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import React, {
   FC, useEffect, useLayoutEffect, useState,
@@ -28,9 +29,11 @@ const CodingChallenges: FC = () => {
         <pre className="line-numbers">
           <code className="language-md">{problem?.problem}</code>
         </pre>
+        <p className="coding-challenge-title">Solution</p>
         <pre className="line-numbers">
           <code className="language-ts">{problem?.solution}</code>
         </pre>
+        <p className="coding-challenge-title">Tests</p>
         <pre className="line-numbers">
           <code className="language-ts">{problem?.tests}</code>
         </pre>
