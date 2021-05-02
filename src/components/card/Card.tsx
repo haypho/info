@@ -1,34 +1,45 @@
 import './Card.scss';
 import React, {
-  FC, ReactNode, useState,
+  FC, ReactNode, useCallback, useState,
 } from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faQrcode } from '@fortawesome/free-solid-svg-icons';
-import PlatformToggleButton from '../platform-toggle-button';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export interface CardProps {
-  children?: ReactNode;
   title?: string;
   iconLeft?: IconProp;
-  footer?: ReactNode;
-  webQRCode?: string;
-  iOSQRCode?: string
-  androidQRCode?: string;
+  iconRight?: IconProp;
+  onClickIconLeft?(): void;
+  onClickIconRight?(): void;
+  renderFrontContent?: ReactNode;
+  renderFrontFooter?: ReactNode;
+  renderBackHeader?: ReactNode;
+  renderBackContent?: ReactNode;
   className?: string;
 }
 
 const Card: FC<CardProps> = ({
-  children, title, iconLeft, footer, iOSQRCode, androidQRCode, webQRCode, className,
+  title,
+  iconLeft,
+  iconRight,
+  onClickIconLeft,
+  onClickIconRight,
+  renderFrontContent,
+  renderFrontFooter,
+  renderBackHeader,
+  renderBackContent,
+  className,
 }: CardProps) => {
   const [showBack, setShowBack] = useState<boolean>(false);
-  const [platform, setPlatform] = useState<'ios' | 'android' | 'web'>(iOSQRCode ? 'ios' : 'web');
-  const qrcodes = {
-    ios: iOSQRCode,
-    android: androidQRCode,
-    web: webQRCode,
-  };
-  const hasQRCode: boolean = !!iOSQRCode || !!androidQRCode || !!webQRCode;
+  const onShowBack = useCallback(() => {
+    if (showBack !== true) {
+      setShowBack(true);
+    }
+    if (onClickIconRight) {
+      onClickIconRight();
+    }
+  }, [showBack, setShowBack, onClickIconRight]);
 
   return (
     <div className={['card', className].join(' ')}>
@@ -36,29 +47,22 @@ const Card: FC<CardProps> = ({
         <div className="card-front">
           <div className="card-details">
             <div className="card-header">
-              {iconLeft && (<FontAwesomeIcon icon={iconLeft} />)}
+              {iconLeft && (<FontAwesomeIcon className={onClickIconLeft ? 'card-button' : ''} icon={iconLeft} onClick={onClickIconLeft} />)}
               {title && (<p className="card-header-title">{title}</p>)}
-              {hasQRCode && (<FontAwesomeIcon className="card-button" icon={faQrcode} onClick={() => setShowBack(true)} />)}
+              {iconRight && (<FontAwesomeIcon className="card-button" icon={iconRight} onClick={onShowBack} />)}
             </div>
-            <div className="card-content">
-              {children}
-            </div>
-            {footer && (
-            <div className="card-footer">
-              {footer}
-            </div>
-            )}
+            <div className="card-content">{renderFrontContent}</div>
+            {renderFrontFooter && (<div className="card-footer">{renderFrontFooter}</div>)}
           </div>
         </div>
         <div className="card-back">
           <div className="card-details">
             <div className="card-header">
               <FontAwesomeIcon className="card-button" icon={faArrowLeft} onClick={() => setShowBack(false)} />
-              {title && (<p className="card-header-title">{title}</p>)}
-              <PlatformToggleButton onChange={setPlatform} />
+              {renderBackHeader}
             </div>
             <div className="card-content">
-              <img className="card-qr-code" src={qrcodes[platform]} alt="QR Code" />
+              {renderBackContent}
             </div>
           </div>
         </div>
