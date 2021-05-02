@@ -41,7 +41,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: 'static/assets/[contenthash].[ext]',
+              name: 'static/assets/[name].[ext]',
             },
           },
         ],
