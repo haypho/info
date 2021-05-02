@@ -1,5 +1,7 @@
 import { faCode } from '@fortawesome/free-solid-svg-icons';
-import React, { FC, useEffect, useState } from 'react';
+import React, {
+  FC, useEffect, useLayoutEffect, useState,
+} from 'react';
 import Prism from 'prismjs';
 import Container from '../../components/container';
 import SectionHeader from '../../components/section-header';
@@ -13,15 +15,13 @@ const CodingChallenges: FC = () => {
     DailyCodingProblemService.fetchByProblemNumber(1).then(setProblem);
   }, []);
 
-  useEffect(() => {
-    // Use setTimeout to push onto callback queue so it runs after the DOM is updated
-    setTimeout(() => Prism.highlightAll(), 0);
+  useLayoutEffect(() => {
+    Prism.highlightAll();
   }, [problem]);
 
   return (
     <Container>
       <SectionHeader title="Coding Challenges!" iconLeft={faCode} />
-      <div>Coding Challenges</div>
       <pre className="line-numbers">
         <code className="language-md">{problem?.problem}</code>
       </pre>
@@ -32,7 +32,6 @@ const CodingChallenges: FC = () => {
         <code className="language-ts">{problem?.tests}</code>
       </pre>
     </Container>
-
   );
 };
 export default CodingChallenges;
