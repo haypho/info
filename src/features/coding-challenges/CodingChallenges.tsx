@@ -11,6 +11,7 @@ import Pagination from '../../components/pagination';
 
 const CodingChallenges: FC = () => {
   const [problem, setProblem] = useState<DailyCodingProblem>();
+  const [page, setPage] = useState<number>(1);
 
   useEffect(() => {
     DailyCodingProblemService.fetchByProblemNumber(1).then(setProblem);
@@ -23,7 +24,7 @@ const CodingChallenges: FC = () => {
   return (
     <Container>
       <SectionHeader title="Coding Challenges!" iconLeft={faCode} />
-      <Pagination page={1} pageCount={10}>
+      <Pagination page={page} pageCount={10} onChange={setPage}>
         <pre className="line-numbers">
           <code className="language-md">{problem?.problem}</code>
         </pre>
