@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
 import Card from '../../../components/card';
+import AndroidQRCodeImageography from '../../../assets/svg/android-qrcode-Imageography.svg';
+import IOSQRCodeImageography from '../../../assets/svg/ios-qrcode-Imageography.svg';
 
 const ImageographyCard: FC = () => (
   <Card
     className="project-card"
     title="Imageography"
     footer="Web Only"
-    androidQRCode="assets/svg/android-qrcode-Imageography.svg"
-    iOSQRCode="assets/svg/ios-qrcode-Imageography.svg"
+    androidQRCode={AndroidQRCodeImageography}
+    iOSQRCode={IOSQRCodeImageography}
   >
     <div>Hello</div>
   </Card>

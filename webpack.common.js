@@ -30,13 +30,25 @@ module.exports = {
         test: /\.s[ac]ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.(jpg|svg|pdf)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: 'static/assets/[contenthash].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(__dirname, 'public/index.html'),
+      template: path.join(__dirname, 'src/index.html'),
     }),
     new ForkTsCheckerWebpackPlugin({
       async: false,
