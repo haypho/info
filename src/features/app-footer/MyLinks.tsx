@@ -5,11 +5,12 @@ import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import IconPrefix from '../../components/icon-prefix';
 import { MyLink } from '../../models';
 import { personalEmail } from '../../constants';
+import Resume from '../../assets/pdf/Résumé_Hayden_Phothong.pdf';
 
 const MyLinks: FC = () => {
   const myLinks: MyLink[] = [
     {
-      href: 'assets/pdf/Résumé_Hayden_Phothong.pdf',
+      href: Resume,
       icon: faFilePdf,
       text: 'Résumé',
     },
