@@ -11,7 +11,7 @@ export interface CardProps {
   children?: ReactNode;
   title?: string;
   iconLeft?: IconProp;
-  footer?: string;
+  footer?: ReactNode;
   webQRCode?: string;
   iOSQRCode?: string
   androidQRCode?: string;
@@ -45,7 +45,7 @@ const Card: FC<CardProps> = ({
             </div>
             {footer && (
             <div className="card-footer">
-              <em className="card-footer-text">{footer}</em>
+              {footer}
             </div>
             )}
           </div>
@@ -54,6 +54,7 @@ const Card: FC<CardProps> = ({
           <div className="card-details">
             <div className="card-header">
               <FontAwesomeIcon className="card-button" icon={faArrowLeft} onClick={() => setShowBack(false)} />
+              {title && (<p className="card-header-title">{title}</p>)}
               <PlatformToggleButton onChange={setPlatform} />
             </div>
             <div className="card-content">
