@@ -3,9 +3,16 @@
 .section-header {
   border-bottom: 3px solid $primary;
   margin-bottom: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $primary;
+
+  .section-header-icon-left {
+    margin-right: 0.5em;
+  }
 
   .section-header-title {
-    color: $primary;
     font-size: 1.5em;
     font-weight: 700;
     margin-bottom: 0;
