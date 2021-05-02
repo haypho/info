@@ -19,6 +19,10 @@ const CodingChallenges: FC = () => {
   const problem = useSelector(
     (state: RootState) => state.currentCodingChallengeReducer.currentProblem,
   );
+  const isFetching = useSelector(
+    (state: RootState) => state.currentCodingChallengeReducer.pending
+      || state.codingChallengesReducer.pending,
+  );
   const [page, setPage] = useState<number>(1);
 
   useEffect(() => {
@@ -33,7 +37,12 @@ const CodingChallenges: FC = () => {
     <Container>
       <SectionHeader title="Coding Challenges!" iconLeft={faCode} />
       {page > 0 && availableDailyCodingProblems.length > 0 && (
-        <Pagination page={page} pageCount={availableDailyCodingProblems.length} onChange={setPage}>
+        <Pagination
+          page={page}
+          pageCount={availableDailyCodingProblems.length}
+          onChange={setPage}
+          disabled={isFetching}
+        >
           <pre className="line-numbers">
             <code className="language-md">{problem?.problem}</code>
           </pre>

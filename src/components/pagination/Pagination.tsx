@@ -10,17 +10,18 @@ export interface PaginationProps {
   page: number;
   pageCount: number;
   onChange?(page: number): void;
+  disabled?: boolean;
 }
 
 const Pagination: FC<PaginationProps> = ({
-  children, page, pageCount, onChange,
+  children, page, pageCount, onChange, disabled,
 }: PaginationProps) => {
   const PaginationControl: FC = () => (
     <>
       <p className="pagination-page-indicator">{`${page} of ${pageCount}`}</p>
       <div>
         <FontAwesomeIcon
-          className={['pagination-button', page - 2 < 1 && 'disabled'].join(' ')}
+          className={['pagination-button', (disabled || page - 2 < 1) && 'disabled'].join(' ')}
           icon={faAngleDoubleLeft}
           onClick={() => {
             if (onChange && page - 2 >= 1) {
@@ -29,7 +30,7 @@ const Pagination: FC<PaginationProps> = ({
           }}
         />
         <FontAwesomeIcon
-          className={['pagination-button', page - 1 < 1 && 'disabled'].join(' ')}
+          className={['pagination-button', (disabled || page - 1 < 1) && 'disabled'].join(' ')}
           icon={faAngleLeft}
           onClick={() => {
             if (onChange && page - 1 >= 1) {
@@ -38,7 +39,7 @@ const Pagination: FC<PaginationProps> = ({
           }}
         />
         <FontAwesomeIcon
-          className={['pagination-button', page + 1 > pageCount && 'disabled'].join(' ')}
+          className={['pagination-button', (disabled || page + 1 > pageCount) && 'disabled'].join(' ')}
           icon={faAngleRight}
           onClick={() => {
             if (onChange && page + 1 <= pageCount) {
@@ -47,7 +48,7 @@ const Pagination: FC<PaginationProps> = ({
           }}
         />
         <FontAwesomeIcon
-          className={['pagination-button', page + 2 > pageCount && 'disabled'].join(' ')}
+          className={['pagination-button', (disabled || page + 2 > pageCount) && 'disabled'].join(' ')}
           icon={faAngleDoubleRight}
           onClick={() => {
             if (onChange && page + 2 <= pageCount) {
