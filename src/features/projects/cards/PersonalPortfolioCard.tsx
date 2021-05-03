@@ -20,7 +20,7 @@ const PersonalPortfolioCard: FC = () => {
       iconRight={faGithub}
       onClickIconRight={() => window.open(PersonalPortfolio.github.url, '_blank')}
       renderFrontContent={<FrontContent />}
-      renderFrontFooter={<PlatformLabel custom={faReact} />}
+      renderFrontFooter={<PlatformLabel customs={faReact} />}
     />
 
   );

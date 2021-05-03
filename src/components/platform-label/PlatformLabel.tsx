@@ -1,5 +1,5 @@
 import './PlatformLabel.scss';
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
@@ -9,21 +9,38 @@ export interface PlatformLabelProps {
   ios?: boolean;
   android?: boolean;
   web?: boolean;
-  custom?: IconProp;
+  customs?: IconProp | IconProp[];
 }
 
 const PlatformLabel: FC<PlatformLabelProps> = ({
   ios = false,
   android = false,
   web = false,
-  custom,
-}: PlatformLabelProps) => (
-  <div className="platform-labels">
-    {ios && (<FontAwesomeIcon className="platform-label ios" icon={faApple} />)}
-    {android && (<FontAwesomeIcon className="platform-label android" icon={faAndroid} />)}
-    {web && (<FontAwesomeIcon className="platform-label web" icon={faGlobe} />)}
-    {custom && (<FontAwesomeIcon className="platform-label custom" icon={custom} />)}
-  </div>
-);
+  customs,
+}: PlatformLabelProps) => {
+  const CustomIcons = useCallback(() => {
+    if (!customs) {
+      return null;
+    }
+    if (Array.isArray(customs)) {
+      return (
+        <>
+          {(customs as IconProp[]).map((custom) => <FontAwesomeIcon className="platform-label custom" icon={custom} />)}
+        </>
+      );
+    }
+
+    return <FontAwesomeIcon className="platform-label custom" icon={customs} />;
+  }, [customs]);
+
+  return (
+    <div className="platform-labels">
+      {ios && (<FontAwesomeIcon className="platform-label ios" icon={faApple} />)}
+      {android && (<FontAwesomeIcon className="platform-label android" icon={faAndroid} />)}
+      {web && (<FontAwesomeIcon className="platform-label web" icon={faGlobe} />)}
+      <CustomIcons />
+    </div>
+  );
+};
 
 export default PlatformLabel;
