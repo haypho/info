@@ -33,11 +33,10 @@ const Card: FC<CardProps> = ({
 }: CardProps) => {
   const [showBack, setShowBack] = useState<boolean>(false);
   const onShowBack = useCallback(() => {
-    if (showBack !== true) {
-      setShowBack(true);
-    }
     if (onClickIconRight) {
       onClickIconRight();
+    } else if (showBack !== true) {
+      setShowBack(true);
     }
   }, [showBack, setShowBack, onClickIconRight]);
 

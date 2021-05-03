@@ -1,4 +1,4 @@
-import { faReact } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faReact } from '@fortawesome/free-brands-svg-icons';
 import React, { FC, useCallback } from 'react';
 import Card from '../../../components/card';
 import PlatformLabel from '../../../components/platform-label';
@@ -17,6 +17,8 @@ const PersonalPortfolioCard: FC = () => {
     <Card
       title={PersonalPortfolio.name}
       className="project-card"
+      iconRight={faGithub}
+      onClickIconRight={() => window.open(PersonalPortfolio.github.url, '_blank')}
       renderFrontContent={<FrontContent />}
       renderFrontFooter={<PlatformLabel custom={faReact} />}
     />

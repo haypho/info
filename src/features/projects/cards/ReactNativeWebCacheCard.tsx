@@ -1,4 +1,4 @@
-import { faNpm } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 import React, { FC, useCallback } from 'react';
 import Card from '../../../components/card';
 import PlatformLabel from '../../../components/platform-label';
@@ -27,6 +27,8 @@ const ReactNativeWebCacheCard: FC = () => {
     <Card
       className="project-card"
       title="React-Native Web Cache"
+      iconRight={faGithub}
+      onClickIconRight={() => window.open(ReactNativeWebCache.github.url, '_blank')}
       renderFrontContent={<FrontContent />}
       renderFrontFooter={<PlatformLabel custom={faNpm} />}
     />
