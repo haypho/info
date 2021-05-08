@@ -11,7 +11,7 @@ const WelcomeMessage: FC = () => (
     <p>
       Thank you for taking the time to look at my personal portfolio. Below I have listed
       a few of my projects. These projects are the ones that taught me the most. I was able
-      to deep-dive into front-end frameworks, the JavaScript/TypeScript ecosystem,
+      to dive deep into front-end frameworks, the JavaScript/TypeScript ecosystem,
       cloud solutions for data storage/retrieval, as well as the publishing process for the
       App Store and Play Store. If you would like to see my work history, check out my
       {' '}
