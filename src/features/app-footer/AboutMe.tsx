@@ -5,7 +5,7 @@ import Avatar from '../../components/avatar';
 import { RootState } from '../../store';
 import ProfileImage from '../../assets/images/profile.jpg';
 
-const fallbackBio = 'Hello! 👋 I am a full-stack web engineer by trade. However, I am still fairly new to the industry, so I am still trying to find my niche!';
+const fallbackBio = 'Hello! 👋 I am a full-stack web engineer by trade. However, I am still fairly new to the industry, so I am trying to find my niche!';
 
 const AboutMe: FC = () => {
   const { avatarUrl, bio } = useSelector((state: RootState) => state.githubUserReducer);
