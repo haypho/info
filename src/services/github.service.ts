@@ -20,7 +20,8 @@ export default class GithubService {
 
       const toProblemNumbers = (problems: number[], content: GithubRepoContent) => {
         if (content.name) {
-          problems.push(Number(content.name[content.name.length - 1]));
+          const problemNumber = content.name.replace('problem-', '');
+          problems.push(Number(problemNumber));
         }
         return problems;
       };

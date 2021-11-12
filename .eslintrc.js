@@ -26,5 +26,6 @@ module.exports = {
     'no-use-before-define': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'linebreak-style': 'off',
   },
 };
