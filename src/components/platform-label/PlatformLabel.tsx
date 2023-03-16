@@ -25,7 +25,7 @@ const PlatformLabel: FC<PlatformLabelProps> = ({
     if (Array.isArray(customs)) {
       return (
         <>
-          {(customs as IconProp[]).map((custom) => <FontAwesomeIcon className="platform-label custom" icon={custom} />)}
+          {(customs as IconProp[]).map((custom, index) => <FontAwesomeIcon key={index} className="platform-label custom" icon={custom} />)}
         </>
       );
     }
