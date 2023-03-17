@@ -1,8 +1,8 @@
 import React, { FC, useCallback, useState } from 'react';
 import { faQrcode } from '@fortawesome/free-solid-svg-icons';
 import Card from '../../../components/card';
-import AndroidQRCodeImageography from '../../../assets/svg/android-qrcode-Imageography.svg';
-import IOSQRCodeImageography from '../../../assets/svg/ios-qrcode-Imageography.svg';
+import AndroidQRCodeImageography from '../../../assets/svg/android-qrcode-imageography.svg';
+import IOSQRCodeImageography from '../../../assets/svg/ios-qrcode-imageography.svg';
 import PlatformLabel from '../../../components/platform-label';
 import PlatformToggleButton from '../../../components/platform-toggle-button';
 import { Imageography } from '../../../constants';
