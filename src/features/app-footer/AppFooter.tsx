@@ -12,7 +12,7 @@ const AppFooter: React.FC = () => (
           <AboutMe />
           <MyLinks />
         </div>
-        <em className="app-footer-copyright">Hayden Phothong &copy; 2021</em>
+        <em className="app-footer-copyright">Hayden Phothong &copy; 2023</em>
       </div>
     </Container>
   </footer>
