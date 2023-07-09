@@ -27,11 +27,11 @@ export const Project: FC<ProjectProps> = ({ project }) => (
       <ProjectLink href={project.github?.url} icon={<GitHub />} />
       <ProjectLink
         href={project.npm?.url}
-        icon={<FontAwesomeIcon icon={faNpm} />}
+        icon={<FontAwesomeIcon icon={faNpm} width={24} height={24} />}
       />
       <ProjectLink
         href={project.yarn?.url}
-        icon={<FontAwesomeIcon icon={faYarn} />}
+        icon={<FontAwesomeIcon icon={faYarn} width={24} height={24} />}
       />
       <ProjectLink href={project.ios?.url} icon={<Apple />} />
       <ProjectLink href={project.android?.url} icon={<Android />} />
