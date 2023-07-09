@@ -39,7 +39,10 @@ export const Footer: FC = () => {
           paddingY={3}
         >
           <Box display="flex" gap={1} minWidth={200}>
-            <Avatar alt="Hayden Phothong" src="profile.jpg" />
+            <Avatar
+              alt="Hayden Phothong"
+              src="/personal-portfolio/profile.jpg"
+            />
             <Box display="flex" flexDirection="column">
               <Typography>Hayden Phothong</Typography>
               <Typography variant="caption">Software Engineer</Typography>
@@ -61,7 +64,7 @@ export const Footer: FC = () => {
             <Box display="flex" gap={1} alignItems="center">
               <PictureAsPdf />
               <Link
-                href="Résumé_Hayden_Phothong.pdf"
+                href="/personal-portfolio/Résumé_Hayden_Phothong.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
