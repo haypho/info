@@ -15,7 +15,7 @@ export const Welcome: FC = () => (
       storage/retrieval, as well as the publishing process for the App Store and
       Play Store. If you would like to see my work history, check out my&nbsp;
       <Link
-        href="personal-portfolio/Résumé_Hayden_Phothong.pdf"
+        href="Résumé_Hayden_Phothong.pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
