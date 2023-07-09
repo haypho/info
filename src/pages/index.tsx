@@ -27,11 +27,13 @@ export default function Home() {
           name="google-site-verification"
           content="5n2Yycpl5i4z-4FFdBKeun_z9Fpsw9w6Vu-6pvyp3Rg"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="personal-portfolio/favicon.ico" />
       </Head>
       <Main>
         <MainAppBar />
-        <Jumbotron src="/notebook.jpg">Personal Portfolio</Jumbotron>
+        <Jumbotron src="personal-portfolio/notebook.jpg">
+          Personal Portfolio
+        </Jumbotron>
         <Welcome />
         <Projects />
         <WebProjects />
