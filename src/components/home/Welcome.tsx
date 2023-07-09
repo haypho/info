@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import { Section } from "../common/Section";
 import { WavingHand } from "@mui/icons-material";
-import Link from "next/link";
-import { Typography } from "@mui/material";
+import { Typography, Link } from "@mui/material";
 import { personalLinkedInURL } from "@/constants";
 
 export const Welcome: FC = () => (
@@ -15,7 +14,7 @@ export const Welcome: FC = () => (
       storage/retrieval, as well as the publishing process for the App Store and
       Play Store. If you would like to see my work history, check out my&nbsp;
       <Link
-        href="Résumé_Hayden_Phothong.pdf"
+        href="/personal-portfolio/Résumé_Hayden_Phothong.pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
