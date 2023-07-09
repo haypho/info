@@ -9,7 +9,7 @@ export const Projects: FC = () => (
   <Section icon={Code} title="Projects">
     <Grid container spacing={2}>
       {Object.entries(projects).map(([key, project]: [string, ProjectType]) => (
-        <Grid item key={key}>
+        <Grid item key={key} xs={12} sm={6} md={4}>
           <Project project={project} />
         </Grid>
       ))}

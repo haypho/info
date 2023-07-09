@@ -7,8 +7,8 @@ import { ProjectLink } from "./ProjectLink";
 import { faNpm, faYarn } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const ProjectCard = styled(Card)`
-  max-width: 250px;
+const ProjectTechStack = styled.ul`
+  margin: 0;
 `;
 
 export type ProjectProps = {
@@ -16,12 +16,20 @@ export type ProjectProps = {
 };
 
 export const Project: FC<ProjectProps> = ({ project }) => (
-  <ProjectCard elevation={6}>
+  <Card raised>
     <CardContent>
       <Typography fontWeight={700} gutterBottom>
         {project.name}
       </Typography>
-      <Typography>{project.description}</Typography>
+      <Typography gutterBottom>{project.description}</Typography>
+      <Typography>Tech Stack:</Typography>
+      <ProjectTechStack>
+        {project.techStack.map((technology) => (
+          <li key={technology}>
+            <Typography>{technology}</Typography>
+          </li>
+        ))}
+      </ProjectTechStack>
     </CardContent>
     <CardActions>
       <ProjectLink href={project.github?.url} icon={<GitHub />} />
@@ -36,5 +44,5 @@ export const Project: FC<ProjectProps> = ({ project }) => (
       <ProjectLink href={project.ios?.url} icon={<Apple />} />
       <ProjectLink href={project.android?.url} icon={<Android />} />
     </CardActions>
-  </ProjectCard>
+  </Card>
 );
