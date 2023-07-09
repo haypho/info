@@ -1,6 +1,0 @@
-{
-  "*.js[x]": [
-    "eslint --cache --fix",
-    "jest --bail --findRelatedTests"
-  ]
-}
