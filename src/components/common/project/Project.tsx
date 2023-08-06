@@ -1,15 +1,17 @@
 import type { Project as ProjectType } from "@/constants";
-import { Card, CardActions, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  Chip,
+  Typography,
+} from "@mui/material";
 import React, { FC } from "react";
-import styled from "@emotion/styled";
 import { Android, Apple, GitHub } from "@mui/icons-material";
 import { ProjectLink } from "./ProjectLink";
 import { faNpm, faYarn } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-const ProjectTechStack = styled.ul`
-  margin: 0;
-`;
 
 export type ProjectProps = {
   project: ProjectType;
@@ -22,14 +24,16 @@ export const Project: FC<ProjectProps> = ({ project }) => (
         {project.name}
       </Typography>
       <Typography gutterBottom>{project.description}</Typography>
-      <Typography>Tech Stack:</Typography>
-      <ProjectTechStack>
+      <Box display="flex" flexWrap="wrap" gap={1}>
         {project.techStack.map((technology) => (
-          <li key={technology}>
-            <Typography>{technology}</Typography>
-          </li>
+          <Chip
+            key={technology}
+            label={technology}
+            variant="outlined"
+            size="small"
+          />
         ))}
-      </ProjectTechStack>
+      </Box>
     </CardContent>
     <CardActions>
       <ProjectLink href={project.github?.url} icon={<GitHub />} />
