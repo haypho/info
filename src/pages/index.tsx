@@ -1,17 +1,5 @@
+import { Footer, Welcome } from "@/components";
 import Head from "next/head";
-import styled from "@emotion/styled";
-import { MainAppBar } from "@/components/home/MainAppBar";
-import { Jumbotron } from "@/components/common/Jumbotron";
-import { Welcome } from "@/components/home/Welcome";
-import { Projects } from "@/components/home/Projects";
-import { WebProjects } from "@/components/home/WebProjects";
-import { Footer } from "@/components/home/Footer";
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
 
 export default function Home() {
   return (
@@ -29,15 +17,9 @@ export default function Home() {
         />
         <link rel="icon" href="/personal-portfolio/favicon.ico" />
       </Head>
-      <Main>
-        <MainAppBar />
-        <Jumbotron src="/personal-portfolio/notebook.jpg">
-          Personal Portfolio
-        </Jumbotron>
+      <main>
         <Welcome />
-        <Projects />
-        <WebProjects />
-      </Main>
+      </main>
       <Footer />
     </>
   );
