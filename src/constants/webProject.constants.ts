@@ -7,7 +7,7 @@ export type WebProject = {
   gitHub: ProjectLink;
 };
 
-export const webProjects = {
+export const WEB_PROJECTS: Record<string, WebProject> = {
   prefixTree: {
     name: "Prefix Tree Auto-Complete",
     src: "https://hphothong.github.io/prefix-tree-autocomplete",
@@ -15,4 +15,4 @@ export const webProjects = {
       url: "https://github.com/hphothong/prefix-tree-autocomplete",
     },
   },
-} satisfies Record<string, WebProject>;
+};

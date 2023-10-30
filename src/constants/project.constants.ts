@@ -13,7 +13,7 @@ export type Project = {
   yarn?: ProjectLink;
 };
 
-export const projects = {
+export const PROJECTS: Record<string, Project> = {
   imageography: {
     name: "Imageography",
     description: "A mobile application built on the React-Native framework.",
@@ -55,4 +55,4 @@ export const projects = {
       url: "https://github.com/hphothong/personal-portfolio",
     },
   },
-} satisfies Record<string, Project>;
+};
