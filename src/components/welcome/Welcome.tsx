@@ -11,7 +11,7 @@ export const Welcome = () => {
     <div className="h-screen flex flex-col items-center justify-center">
       {isImageLoaded && (
         <div className="w-3/4 flex">
-          <div className="flex flex-col shrink items-center">
+          <div className="flex flex-col items-center">
             <WelcomeMessage />
             <SocialLinks />
           </div>
