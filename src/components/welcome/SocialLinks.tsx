@@ -33,7 +33,7 @@ const SOCIAL_LINK_ITEMS = [
 export const SocialLinks = () => {
   return (
     <motion.div
-      className="ml-14 text-white flex items-center"
+      className="text-white flex items-center"
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}
