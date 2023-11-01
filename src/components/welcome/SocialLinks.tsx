@@ -9,7 +9,6 @@ import Link from "next/link";
 import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import classNames from "classnames";
 
 const SOCIAL_LINK_ITEMS = [
   {
@@ -39,14 +38,14 @@ export const SocialLinks = () => {
       transition={{ delay: 0.5 }}
     >
       {SOCIAL_LINK_ITEMS.map(({ icon, url }) => (
-        <Link key={url} href={url} target="_blank" passHref>
-          <FontAwesomeIcon
-            icon={icon}
-            className={classNames(
-              "my-5 mx-3 w-5 h-5",
-              "hover:my-4 hover:mx-2.5 hover:w-6 hover:h-6 hover:brightness-75",
-            )}
-          />
+        <Link
+          key={url}
+          href={url}
+          target="_blank"
+          passHref
+          className="w-5 h-5 hover:w-6 hover:h-6 my-5 mx-3 hover:my-4 hover:mx-2.5 hover:brightness-75"
+        >
+          <FontAwesomeIcon icon={icon} className="w-full h-full" />
         </Link>
       ))}
     </motion.div>
