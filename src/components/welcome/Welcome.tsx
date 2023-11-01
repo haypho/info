@@ -10,9 +10,11 @@ export const Welcome = () => {
   return (
     <div className="h-screen flex flex-col items-center justify-center">
       {isImageLoaded && (
-        <div className="w-3/4">
-          <WelcomeMessage />
-          <SocialLinks />
+        <div className="w-3/4 flex">
+          <div className="flex flex-col shrink items-center">
+            <WelcomeMessage />
+            <SocialLinks />
+          </div>
         </div>
       )}
       <Image
