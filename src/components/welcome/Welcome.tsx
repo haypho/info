@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Image from "next/image";
 import { ASSET_IMAGE_MINIFIED_JS } from "@/constants";
 import { useState } from "react";
-import { WelcomeMessage } from './WelcomeMessage';
-import { SocialLinks } from './SocialLinks';
+import { WelcomeMessage } from "./WelcomeMessage";
+import { SocialLinks } from "./SocialLinks";
 
 export const Welcome = () => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
@@ -25,6 +25,4 @@ export const Welcome = () => {
       />
     </div>
   );
-}
-
-
+};

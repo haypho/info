@@ -1,2 +1,2 @@
-export * from './welcome/Welcome';
-export * from './Footer';
+export * from "./welcome/Welcome";
+export * from "./Footer";
