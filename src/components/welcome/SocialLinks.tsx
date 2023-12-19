@@ -35,7 +35,7 @@ export const SocialLinks = () => {
       className="text-white flex items-center"
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5 }}
+      transition={{ delay: 0.6 }}
     >
       {SOCIAL_LINK_ITEMS.map(({ icon, url }) => (
         <Link
@@ -43,7 +43,7 @@ export const SocialLinks = () => {
           href={url}
           target="_blank"
           passHref
-          className="w-5 h-5 hover:w-6 hover:h-6 my-5 mx-3 hover:my-4 hover:mx-2.5 hover:brightness-75"
+          className="w-6 h-6 hover:w-7 hover:h-7 my-5 mx-4 hover:my-4 hover:mx-3.5 hover:brightness-75"
         >
           <FontAwesomeIcon icon={icon} className="w-full h-full" />
         </Link>

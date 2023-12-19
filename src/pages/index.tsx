@@ -1,4 +1,4 @@
-import { Footer, Welcome } from "@/components";
+import { Footer, Skills, Welcome } from "@/components";
 import Head from "next/head";
 
 export default function Home() {
