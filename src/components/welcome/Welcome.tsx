@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { ASSET_IMAGE_MINIFIED_JS } from "@/constants";
 import { useState } from "react";
-import { WelcomeMessage } from "./WelcomeMessage";
 import { SocialLinks } from "./SocialLinks";
+import { TypingLetters } from "../TypingLetters";
 
 export const Welcome = () => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
@@ -12,7 +12,9 @@ export const Welcome = () => {
       {isImageLoaded && (
         <div className="w-3/4 flex">
           <div className="flex flex-col items-center">
-            <WelcomeMessage />
+            <h1 className="font-title text-white text-7xl text-center my-3 tracking-wider">
+              <TypingLetters>Hayden Phothong</TypingLetters>
+            </h1>
             <SocialLinks />
           </div>
         </div>
