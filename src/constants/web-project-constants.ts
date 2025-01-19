@@ -1,4 +1,4 @@
-import { ProjectLink } from "./project.constants";
+import { ProjectLink } from "./project-constants";
 
 export type WebProject = {
   name: string;
