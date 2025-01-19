@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { ASSET_IMAGE_MINIFIED_JS } from "@/constants";
 import { useState } from "react";
-import { SocialLinks } from "./SocialLinks";
-import { TypingLetters } from "../TypingLetters";
+import { SocialLinks } from "./social-link";
+import { TypingLetters } from "@/components";
 
 export const Welcome = () => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center">
+    <div className="flex flex-1 flex-col items-center justify-center">
       {isImageLoaded && (
         <div className="w-3/4 flex">
           <div className="flex flex-col items-center">
