@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
   ASSET_PDF_RESUME,
+  PERSONAL_EMAIL,
   PERSONAL_EMAIL_URL,
   PERSONAL_GITHUB_URL,
   PERSONAL_LINKEDIN_URL,
@@ -26,26 +32,46 @@ export function AppHeaderSocialLinks(props: React.HTMLProps<HTMLDivElement>) {
         props.className,
       )}
     >
-      <Button asChild variant="outline" disabled={open}>
-        <Link href={PERSONAL_GITHUB_URL} target="_blank">
-          <FontAwesomeIcon icon={faGithub} />
-        </Link>
-      </Button>
-      <Button asChild variant="outline" disabled={open}>
-        <Link href={PERSONAL_LINKEDIN_URL} target="_blank">
-          <FontAwesomeIcon icon={faLinkedin} />
-        </Link>
-      </Button>
-      <Button asChild variant="outline" disabled={open}>
-        <Link href={ASSET_PDF_RESUME} target="_blank">
-          <FileUser />
-        </Link>
-      </Button>
-      <Button asChild variant="outline" disabled={open}>
-        <Link href={PERSONAL_EMAIL_URL} target="_blank">
-          <Mail />
-        </Link>
-      </Button>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button asChild variant="outline" disabled={open}>
+            <Link href={PERSONAL_GITHUB_URL} target="_blank">
+              <FontAwesomeIcon icon={faGithub} />
+            </Link>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>GitHub</TooltipContent>
+      </Tooltip>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button asChild variant="outline" disabled={open}>
+            <Link href={PERSONAL_LINKEDIN_URL} target="_blank">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </Link>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>LinkedIn</TooltipContent>
+      </Tooltip>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button asChild variant="outline" disabled={open}>
+            <Link href={ASSET_PDF_RESUME} target="_blank">
+              <FileUser />
+            </Link>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Résumé</TooltipContent>
+      </Tooltip>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button asChild variant="outline" disabled={open}>
+            <Link href={PERSONAL_EMAIL_URL} target="_blank">
+              <Mail />
+            </Link>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>{PERSONAL_EMAIL}</TooltipContent>
+      </Tooltip>
     </div>
   );
 }
