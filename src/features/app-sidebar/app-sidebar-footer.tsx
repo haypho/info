@@ -15,11 +15,15 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FileUser, Mail } from "lucide-react";
 import Link from "next/link";
+import { ThemeButton } from "../theme/theme-button";
 
 export function AppSidebarFooter() {
   return (
     <SidebarFooter>
       <SidebarMenu>
+        <SidebarMenuItem>
+          <ThemeButton />
+        </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton asChild>
             <Link href={PERSONAL_GITHUB_URL} target="_blank">
