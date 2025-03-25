@@ -25,7 +25,9 @@ export default function ProjectsPage() {
           <BreadcrumbPage>Projects</BreadcrumbPage>
         </BreadcrumbItem>
       </AppHeader>
-      <Projects />
+      <div className="flex flex-1 flex-col p-4">
+        <Projects />
+      </div>
     </>
   );
 }

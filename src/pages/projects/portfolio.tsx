@@ -30,6 +30,7 @@ export default function ProjectsPortfolioPage() {
           <BreadcrumbPage>Portfolio</BreadcrumbPage>
         </BreadcrumbItem>
       </AppHeader>
+      <div className="flex flex-1 flex-col p-4"></div>
     </>
   );
 }

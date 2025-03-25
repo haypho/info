@@ -30,6 +30,7 @@ export default function ProjectsImageographyPage() {
           <BreadcrumbPage>Imageography</BreadcrumbPage>
         </BreadcrumbItem>
       </AppHeader>
+      <div className="flex flex-1 flex-col p-4"></div>
     </>
   );
 }

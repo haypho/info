@@ -9,39 +9,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
 import { SidebarMenuButton } from "@/components/ui/sidebar";
 
 export function ThemeButton() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <SidebarMenuButton>
-          <Sun
-            className={cn("h-[1.2rem] w-[1.2rem] scale-0 transition-all", {
-              "scale-100": theme === "light",
-            })}
-          />
-          <Moon
-            className={cn(
-              "absolute h-[1.2rem] w-[1.2rem] transition-all scale-0",
-              {
-                "scale-100": theme === "dark",
-              },
-            )}
-          />
-          <SunMoon
-            className={cn(
-              "absolute h-[1.2rem] w-[1.2rem] transition-all scale-0",
-              {
-                "scale-100": theme === "system",
-              },
-            )}
-          />
-          <span>
-            {`${theme?.substring(0, 1).toUpperCase()}${theme?.substring(1)} Theme`}
-          </span>
+          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 transition-all dark:scale-0" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] transition-all scale-0 dark:scale-100" />
+          <span>Theme</span>
           <span className="sr-only">Toggle theme</span>
         </SidebarMenuButton>
       </DropdownMenuTrigger>
