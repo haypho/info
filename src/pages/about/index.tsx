@@ -6,12 +6,12 @@ import {
 } from "@/components/ui/breadcrumb";
 import { AppHeaderBreadcrumbs } from "@/features/app-header/app-header";
 
-export default function HomePage() {
+export default function AboutPage() {
   return (
     <>
       <AppHeaderBreadcrumbs>
         <BreadcrumbItem>
-          <BreadcrumbPage>Welcome!</BreadcrumbPage>
+          <BreadcrumbPage>About</BreadcrumbPage>
         </BreadcrumbItem>
       </AppHeaderBreadcrumbs>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">

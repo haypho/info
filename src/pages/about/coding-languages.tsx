@@ -5,13 +5,20 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { AppHeaderBreadcrumbs } from "@/features/app-header/app-header";
+import Link from "next/link";
 
-export default function HomePage() {
+export default function AboutCodingLanguagesPage() {
   return (
     <>
       <AppHeaderBreadcrumbs>
+        <BreadcrumbItem className="hidden md:block">
+          <BreadcrumbLink asChild>
+            <Link href="/about">About</Link>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator className="hidden md:block" />
         <BreadcrumbItem>
-          <BreadcrumbPage>Welcome!</BreadcrumbPage>
+          <BreadcrumbPage>Coding Languages</BreadcrumbPage>
         </BreadcrumbItem>
       </AppHeaderBreadcrumbs>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
