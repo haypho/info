@@ -4,11 +4,16 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { PROJECTS } from "@/constants";
 import { AppHeader } from "@/features/app-header/app-header";
+import { ProjectDetails } from "@/features/projects/project-details";
 import { House } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function ProjectsImageographyPage() {
+  const pathname = usePathname();
+  const project = PROJECTS.find((p) => p.href === pathname);
   return (
     <>
       <AppHeader>
@@ -30,7 +35,9 @@ export default function ProjectsImageographyPage() {
           <BreadcrumbPage>React-Native Web Cache</BreadcrumbPage>
         </BreadcrumbItem>
       </AppHeader>
-      <div className="flex flex-1 flex-col p-4"></div>
+      <div className="flex flex-1 flex-col p-4">
+        <ProjectDetails project={project} />
+      </div>
     </>
   );
 }
