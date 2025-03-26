@@ -3,56 +3,48 @@ export type ProjectLink = {
 };
 
 export type Project = {
-  name: string;
+  title: string;
   description: string;
+  details: Array<{
+    headline: string;
+    body: string;
+  }>;
   techStack: string[];
-  github?: ProjectLink;
-  ios?: ProjectLink;
-  android?: ProjectLink;
-  npm?: ProjectLink;
-  yarn?: ProjectLink;
+  href: string;
+  github?: string;
+  ios?: string;
+  android?: string;
+  npm?: string;
+  yarn?: string;
 };
 
-export const PROJECTS: Record<string, Project> = {
-  imageography: {
-    name: "Imageography",
+export const PROJECTS: Project[] = [
+  {
+    title: "Imageography",
     description: "A mobile application built on the React-Native framework.",
     techStack: ["React-Native", "Redux", "TypeScript", "Firebase"],
-    ios: {
-      url: "https://apps.apple.com/us/app/imageography/id1516408403",
-    },
-    android: {
-      url: "https://play.google.com/store/apps/details?id=com.hphothong.imageography",
-    },
+    href: "/projects/imageography",
+    github: "https://github.com/haypho/imageography",
+    details: [],
   },
-  reactNativeWebCache: {
-    name: "React-Native Web Cache",
+  {
+    title: "React-Native Web Cache",
     description:
       "An LRU cache. This is the first NPM/Yarn package that I published to the registries.",
     techStack: ["NodeJS", "NPM/Yarn", "TypeScript"],
-    github: {
-      url: "https://github.com/hphothong/react-native-web-cache",
-    },
-    npm: {
-      url: "https://www.npmjs.com/package/react-native-web-cache",
-    },
-    yarn: {
-      url: "https://yarnpkg.com/package/react-native-web-cache",
-    },
+    href: "/projects/react-native-web-cache",
+    github: "https://github.com/haypho/react-native-web-cache",
+    npm: "https://www.npmjs.com/package/react-native-web-cache",
+    yarn: "https://yarnpkg.com/package/react-native-web-cache",
+    details: [],
   },
-  personalPortfolio: {
-    name: "Personal Portfolio",
+  {
+    title: "Portfolio",
     description:
-      "This website! A living document for my projects and completed coding challenges.",
-    techStack: [
-      "NextJS",
-      "React",
-      "MaterialUI",
-      "StyledComponents",
-      "TypeScript",
-    ],
-    github: {
-      url: "https://github.com/hphothong/personal-portfolio",
-    },
+      "This website! A living document for my projects and expertise.",
+    techStack: ["NextJS", "React", "Shadcn", "TailwindCSS", "TypeScript"],
+    href: "/projects/portfolio",
+    github: "https://github.com/haypho/info",
+    details: [],
   },
-};
+];
