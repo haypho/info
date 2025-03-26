@@ -5,6 +5,10 @@ export type ProjectLink = {
 export type Project = {
   title: string;
   description: string;
+  details: Array<{
+    headline: string;
+    body: string;
+  }>;
   techStack: string[];
   href: string;
   github?: string;
@@ -21,6 +25,7 @@ export const PROJECTS: Project[] = [
     techStack: ["React-Native", "Redux", "TypeScript", "Firebase"],
     href: "/projects/imageography",
     github: "https://github.com/haypho/imageography",
+    details: [],
   },
   {
     title: "React-Native Web Cache",
@@ -31,19 +36,15 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/haypho/react-native-web-cache",
     npm: "https://www.npmjs.com/package/react-native-web-cache",
     yarn: "https://yarnpkg.com/package/react-native-web-cache",
+    details: [],
   },
   {
     title: "Portfolio",
     description:
-      "This website! A living document for my projects and completed coding challenges.",
-    techStack: [
-      "NextJS",
-      "React",
-      "MaterialUI",
-      "StyledComponents",
-      "TypeScript",
-    ],
+      "This website! A living document for my projects and expertise.",
+    techStack: ["NextJS", "React", "Shadcn", "TailwindCSS", "TypeScript"],
     href: "/projects/portfolio",
     github: "https://github.com/haypho/info",
+    details: [],
   },
 ];
