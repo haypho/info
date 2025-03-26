@@ -19,7 +19,11 @@ import { FileUser, Mail } from "lucide-react";
 import Link from "next/link";
 
 export function AppHeaderSocialLinks(props: React.HTMLProps<HTMLDivElement>) {
-  const { open } = useSidebar();
+  const { open, isMobile } = useSidebar();
+
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <div
