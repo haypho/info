@@ -10,12 +10,8 @@ export default function HomePage() {
         </BreadcrumbItem>
       </AppHeader>
       <div className="flex flex-1 flex-col p-4">
-        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-          <div className="aspect-video rounded-xl bg-muted/50" />
-          <div className="aspect-video rounded-xl bg-muted/50" />
-          <div className="aspect-video rounded-xl bg-muted/50" />
-        </div>
-        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+        <h1 className="text-3xl font-bold">Full-Stack Web Developer</h1>
+        <p>Specializing in Frontend Engineering</p>
       </div>
     </>
   );
