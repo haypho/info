@@ -22,7 +22,7 @@ export default function HomePage() {
             programming, I was learning Java. As I experienced different
             technologies, I learned that I really enjoyed Frontend Engineering.
             This is where the love for JavaScript began. However, I will always
-            be a special place for Java.
+            have a special place for Java.
           </p>
         </div>
         <div>
