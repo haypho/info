@@ -22,7 +22,7 @@ export const ProjectDetails = (props: ProjectDetailsProps) => {
           <h1 className="text-3xl font-bold">{props.project.title}</h1>
           {props.project.github && (
             <Button asChild size="icon" variant="ghost">
-              <Link href={props.project.github}>
+              <Link href={props.project.github} target="_blank">
                 <FontAwesomeIcon icon={faGithub} />
               </Link>
             </Button>
