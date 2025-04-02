@@ -2,6 +2,10 @@ import { Project } from "@/constants";
 import { ProjectDetailsTechStack } from "./project-details-tech-stack";
 import React from "react";
 import { Construction } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export type ProjectDetailsProps = {
   project?: Project;
@@ -14,7 +18,16 @@ export const ProjectDetails = (props: ProjectDetailsProps) => {
   return (
     <div className="flex flex-col flex-1 gap-4">
       <div>
-        <h1 className="text-3xl font-bold">{props.project.title}</h1>
+        <div className="flex flex-row items-center gap-2">
+          <h1 className="text-3xl font-bold">{props.project.title}</h1>
+          {props.project.github && (
+            <Button asChild size="icon" variant="ghost">
+              <Link href={props.project.github}>
+                <FontAwesomeIcon icon={faGithub} />
+              </Link>
+            </Button>
+          )}
+        </div>
         <ProjectDetailsTechStack techStack={props.project.techStack} />
       </div>
       {props.project.details.map((detail, index) => (
