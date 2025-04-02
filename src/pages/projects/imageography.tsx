@@ -63,21 +63,22 @@ export default function ProjectsImageographyPage() {
         </BreadcrumbItem>
       </AppHeader>
       <div className="flex flex-1 flex-col p-4">
-        <ProjectDetails project={project} />
-        <Carousel className="self-center m-12 w-full max-w-2/3">
-          <CarouselContent>
-            {SCREENSHOTS.map(({ src, alt }) => (
-              <CarouselItem
-                key={src}
-                className="relative md:basis-1/2 lg:basis-1/3 aspect-[9/16]"
-              >
-                <Image className="p-4 rounded-3xl" fill alt={alt} src={src} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <ProjectDetails project={project}>
+          <Carousel className="self-center m-12 w-full max-w-2/3">
+            <CarouselContent>
+              {SCREENSHOTS.map(({ src, alt }) => (
+                <CarouselItem
+                  key={src}
+                  className="relative md:basis-1/2 lg:basis-1/3 aspect-[9/16]"
+                >
+                  <Image className="p-4 rounded-3xl" fill alt={alt} src={src} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </ProjectDetails>
       </div>
     </>
   );
