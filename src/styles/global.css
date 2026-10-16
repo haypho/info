@@ -148,3 +148,39 @@ body {
     @apply bg-sidebar text-foreground;
   }
 }
+
+@theme {
+  --color-sage: #edf0e8;
+  --color-sage-soft: #f4f6f1;
+  --color-sage-line: #cbd3c4;
+  --color-sage-dash: #aeb9a6;
+  --color-ink: #1d2621;
+  --color-ink-soft: #3b4640;
+  --color-ink-muted: #55605a;
+  --color-forest: #26302a;
+  --color-forest-line: #3e4a43;
+  --color-mist: #c9d1c3;
+  --color-mist-muted: #9fb0a5;
+  --color-honey: #f6d86b;
+  --color-teal: #2c6e7f;
+  --color-teal-dark: #24606f;
+  --color-teal-darker: #1a4752;
+  --color-leaf: #2f8a4f;
+  --font-display:
+    var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+}
+
+.home {
+  scroll-behavior: smooth;
+}
+
+.home :focus-visible {
+  outline: 3px solid var(--color-teal);
+  outline-offset: 3px;
+}
+
+.highlight {
+  background: linear-gradient(transparent 58%, var(--color-honey) 58%);
+  padding: 0 2px;
+}
