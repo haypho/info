@@ -7,7 +7,7 @@ export type Highlight = {
 export const HIGHLIGHTS: Highlight[] = [
   {
     value: "1.8B+",
-    label: "monthly Groups users got Nicknames, which I built at Meta",
+    label: "monthly Facebook Groups users got Nicknames, which I built at Meta",
   },
   {
     value: "80K",
